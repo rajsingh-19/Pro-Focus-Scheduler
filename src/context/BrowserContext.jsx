@@ -6,7 +6,7 @@ const initialValue = {
     time: "",
     meridiem: "",
     greetMsg: "",
-    focus: ""
+    focus: null
 
 };
 const BrowserContext = createContext();

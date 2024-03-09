@@ -1,4 +1,5 @@
 import { useBrowser } from '../context/BrowserContext';
+import "../styles/home.css";
 
 const Home = () => {
   
@@ -20,7 +21,7 @@ const Home = () => {
   
   return (
     <div className='home'>
-      <div className='brand-heading text primary p-l p-t'>Extension Elevate</div>
+      <div className='brand-heading text primary p-l p-t'>Pro Focus Scheduler</div>
       <div className='name-heading text primary flex justify-center items-center'>Hello !, What's your name ?</div>
       <form className='flex items-center justify-center' onSubmit={handleFormSubmit}>
         <input required className='inp-home text2' type="text" placeholder='Enter your name....' onKeyDown={handleNameChange} />

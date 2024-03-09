@@ -30,6 +30,12 @@ export const BrowserReducer = (state, {type, payload }) => {
                 focus: payload
             }
         }
+        case "DELETE": {
+            return {
+                ...state,
+                focus: null
+            }
+        }
         default: {
             return state;
         }

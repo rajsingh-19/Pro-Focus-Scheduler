@@ -1,3 +1,48 @@
+.user-page {
+    height: 100vh;
+    position: relative;
+}
 .quotes {
-    height: 20vh;
+    position: absolute;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    bottom: 3rem;
+    text-align: center;
+}
+.del-btn {
+    background-color: transparent;
+    color: #fafafa;
+    outline: none;
+    border: none;
+    padding-top: 15px;
+}
+.strike {
+    text-decoration: line-through;
+}
+.time-div {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.float-l {
+    float: left;
+}
+.greet-div {
+    padding-top: 35vh;
+    text-align: center;
+}
+.inp-focus {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fafafa;
+    width: 40%;
+    line-height: 2.25rem;
+    font-weight: 300;
+}
+.checkbox {
+    width: 1rem;
+}
+.del-icon {
+    height: 1.5rem;
 }

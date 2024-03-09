@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "../styles/user.css";
 import quotes from "../db/Quotes";
 import { useBrowser } from '../context/BrowserContext';
 import { MdDeleteForever } from "react-icons/md";
@@ -23,6 +24,11 @@ const User = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const currentStatus = localStorage.getItem("checkedStatus");
+    currentStatus === "true" ? setIsChecked(true) : setIsChecked(false)  
+  }, []);
+
   const getTime = () => {
     const date = new Date();
     const hours = date.getHours();
@@ -38,7 +44,7 @@ const User = () => {
       type: "TIME",
       payload: currentTime
     });
-    // console.log(currentTime);
+
     
     BrowserDispatch({
       type: "MERIDIEM",
@@ -52,7 +58,6 @@ const User = () => {
 
 
   };
-  // console.log(getTime);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -68,41 +73,50 @@ const User = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const currentStatus = localStorage.getItem("checkedStatus");
-  //   currentStatus === "true" ? setIsChecked(true) : setIsChecked(false)  
-  // }, []);
+  
 
-  const handleCheckbox = () => {
-    setIsChecked(true);
+  const handleCheckbox = (event) => {
+    if(event.target.checked) {
+      setIsChecked(isChecked => !isChecked);
+    } else {
+      setIsChecked(isChecked => !isChecked);
+    }
+    localStorage.setItem("checkedStatus", !isChecked);
   };
 
   const handleDelete = () => {
+    BrowserDispatch({
+      type: "DELETE"
+    })
+    setIsChecked(false);
+    localStorage.removeItem("checkedStatus");
     localStorage.removeItem("focus");
   }
 
   return (
-    <div>
-        <div className='primary'>{time} {meridiem}</div>
-        <div className='primary'>{greetMsg}, {name}</div>
-        
+    <div className='user-page'>
+        <div className='time-div text3 primary float-l'>{time} {meridiem}</div>
+        <div className='primary text greet-div'>{greetMsg}, {name}</div>
         {focus ?  
         <div className='primary'>
-          <p>Today's Focus</p>
-          <label >
-            <input type="checkbox" onChange={handleCheckbox} />
-            <span className=''>{focus}</span>
+          <p className='flex
+           justify-center p-t text3'>Today's Focus</p>
+          <div className='focus-container flex justify-center items-center'>
+          <label className={`${isChecked ? "strike" : ''} flex justify-center p-t-10 cursor`}>
+            <input type="checkbox" onChange={handleCheckbox} checked={isChecked}  className='text2 checkbox cursor'/>
+            <span className='text2 p-l10 p-r10'>{focus}</span>
           </label>
-          <button className='del-btn' onClick={handleDelete}><MdDeleteForever /></button>
+          <button className='del-btn justify-center text3' onClick={handleDelete}><MdDeleteForever className='items-center del-icon cursor'/></button>
+          </div>
         </div> :
         <div>
-        <div className='primary'>What's your today's main focus ?</div>
-          <form onSubmit={handleFormSubmit}>
-            <input required type="text" onKeyDown={handleTodayFocus} />
+        <p className='primary flex justify-center text2 p-t-10'>What's your today's main focus ?</p>
+          <form onSubmit={handleFormSubmit} className='flex justify-center p-t-10'>
+            <input required type="text" onKeyDown={handleTodayFocus} className='inp-focus text2 primary' />
           </form>
         </div> }
 
-        <div className='quotes primary text3'>{quote}</div>
+        <div className='quotes primary text3 '>{quote}</div>
     </div>
   )
 }
