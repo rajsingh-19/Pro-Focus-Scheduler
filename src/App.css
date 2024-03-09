@@ -1,0 +1,69 @@
+@import "./styles/home.css";
+@import "./styles/user.css";
+
+/*      reset css    */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*      universal    */
+.flex {
+    display: flex;
+}
+.dir-row {
+    flex-direction: row;
+}
+.dir-col {
+    flex-direction: column;
+}
+.justify-center {
+    justify-content: center;
+}
+.items-center {
+    align-items: center;
+}
+.p-l {
+    padding-left: 20px;
+}
+.p-t {
+    padding-top: 20px;
+}
+.text {
+    font-size: 3rem;
+}
+.text1 {
+    font-size: 2.5rem;
+}
+.text2 {
+    font-size: 2rem;
+}
+.text3 {
+    font-size: 1.5rem;
+}
+.text4 {
+    font-size: 1rem;
+}
+.primary {
+    color: #fafafa;
+}
+/*      app        */
+.app {
+    height: 100vh;
+    width: 100vw;
+}
+.background {
+    background-repeat: no-repeat;
+    background-position: center center center center;
+    background-size: cover;
+}
+/*       */
+.del-btn {
+    background-color: transparent;
+    color: #fafafa;
+    outline: none;
+    border: none;
+}
+.strike {
+    text-decoration: line-through;
+}

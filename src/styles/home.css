@@ -1,0 +1,28 @@
+.home {
+    width: 100%;
+    height: 100%;
+}
+.brand-heading {
+    height: 20%;
+    padding: 5px;
+    font-weight: 700;
+}
+.name-heading {
+    margin-top: 10%;
+    padding-bottom: 20px;
+    font-style: italic;
+}
+.inp-home {
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fafafa;
+    width: 50%;
+    text-align: center;
+    color: #e7e5e4;
+}
+.inp-home::placeholder {
+    line-height: 2rem;
+    color: #d4d4d4;
+    font-weight: 400;
+}
