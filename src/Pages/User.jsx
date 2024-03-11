@@ -3,14 +3,18 @@ import "../styles/user.css";
 import quotes from "../db/Quotes";
 import { useBrowser } from '../context/BrowserContext';
 import { MdDeleteForever } from "react-icons/md";
+import Weather from "../components/Weather";
+import Todo from "../components/Todo";
 
 const index = Math.floor(Math.random() * 21);
 const quote = quotes[index].quote;
 
 const User = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [location, setLocation] = useState(false);
+  const [openTodo, setTodoOpen] = useState(false);
 
-  const {name, time, meridiem, greetMsg, focus, BrowserDispatch} = useBrowser();
+  const {name, time, meridiem, greetMsg, focus, userLocation, BrowserDispatch} = useBrowser();
 
   useEffect(() => {
     getTime();
@@ -29,6 +33,16 @@ const User = () => {
     currentStatus === "true" ? setIsChecked(true) : setIsChecked(false)  
   }, []);
 
+  useEffect(() => {
+    const currentLocation = localStorage.getItem("userLocation");
+    BrowserDispatch({
+      type: "USERLOCATION",
+      payload: currentLocation
+    });
+    const currentLocationStatus = localStorage.getItem("locationStatus"); 
+    currentLocationStatus && setLocation(currentLocationStatus);
+  }, []);
+
   const getTime = () => {
     const date = new Date();
     const hours = date.getHours();
@@ -45,7 +59,6 @@ const User = () => {
       payload: currentTime
     });
 
-    
     BrowserDispatch({
       type: "MERIDIEM",
       payload: hours
@@ -56,7 +69,6 @@ const User = () => {
       payload: hours
     });
 
-
   };
 
   const handleFormSubmit = (event) => {
@@ -64,7 +76,7 @@ const User = () => {
   };
 
   const handleTodayFocus = (event) => {
-    if(event.key === "Enter" && event.target.value.length > 0) {
+    if(event.key === "Enter" && event.target.value.trim().length > 0) {
       BrowserDispatch({
       type: "FOCUS",
       payload: event.target.value
@@ -72,8 +84,6 @@ const User = () => {
       localStorage.setItem("focus", event.target.value);
     }
   };
-
-  
 
   const handleCheckbox = (event) => {
     if(event.target.checked) {
@@ -91,12 +101,37 @@ const User = () => {
     setIsChecked(false);
     localStorage.removeItem("checkedStatus");
     localStorage.removeItem("focus");
+  };
+
+  const handleLocation = (event) => {
+    if(event.key === "Enter" && event.target.value.trim().length > 0) {
+      BrowserDispatch({
+        type: "USERLOCATION",
+        payload: event.target.value
+      });
+
+      setLocation(true);
+      localStorage.setItem("locationStatus", true);
+      localStorage.setItem("userLocation", event.target.value);
+    }
+  } 
+
+  const handleTodoBtn = () => {
+    setTodoOpen(openTodo => !openTodo);
   }
 
   return (
     <div className='user-page'>
         <div className='time-div text3 primary float-l'>{time} {meridiem}</div>
-        <div className='primary text greet-div'>{greetMsg}, {name}</div>
+        
+        {location ? <div className='weather-div'><Weather /></div> : 
+        <div className='weather-div flex dir-col'>
+          <p className='primary text3 float-r'>Today's Weather ?</p>
+          <input type="text" placeholder='City name..' className='primary text3 weather-inp float-r' onKeyDown={handleLocation} />
+        </div>}
+
+        <div className='primary text greet-div'>{greetMsg} {name}</div>
+
         {focus ?  
         <div className='primary'>
           <p className='flex
@@ -112,11 +147,14 @@ const User = () => {
         <div>
         <p className='primary flex justify-center text2 p-t-10'>What's your today's main focus ?</p>
           <form onSubmit={handleFormSubmit} className='flex justify-center p-t-10'>
-            <input required type="text" onKeyDown={handleTodayFocus} className='inp-focus text2 primary' />
+            <input required type="text" onKeyDown={handleTodayFocus} placeholder='focus...' className='inp-focus text2 primary' />
           </form>
         </div> }
-
-        <div className='quotes primary text3 '>{quote}</div>
+        { openTodo && <Todo />}
+        <div className='todoBtnDiv float-r'>
+          <button className='cursor todoBtn float-r text3 primary' onClick={handleTodoBtn}>Task</button>
+        </div>
+        <div className='quotes primary text3'>{quote}</div>
     </div>
   )
 }

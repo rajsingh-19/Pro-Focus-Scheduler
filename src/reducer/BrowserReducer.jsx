@@ -21,13 +21,19 @@ export const BrowserReducer = (state, {type, payload }) => {
         case "GREETMSG": {
             return {
                 ...state,
-                greetMsg: payload >= 0 && payload <= 12 ? "Good Morning !" : payload > 12 && payload <= 17 ? "Good afternoon !" : payload > 17 && payload <= 22 ? "Good Evening !" : "Good Night !"
+                greetMsg: payload >= 0 && payload < 12 ? "Good Morning!" : payload >= 12 && payload < 17 ? "Good afternoon!" : payload >= 17 && payload < 22 ? "Good Evening!" : "Good Night!"
             }
         }
         case "FOCUS": {
             return {
                 ...state,
                 focus: payload
+            }
+        }
+        case "USERLOCATION": {
+            return {
+                ...state,
+                userLocation: payload
             }
         }
         case "DELETE": {

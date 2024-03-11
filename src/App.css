@@ -53,6 +53,9 @@
 .primary {
     color: #fafafa;
 }
+.strike {
+    text-decoration: line-through;
+}
 /*      app        */
 .app {
     height: 100vh;

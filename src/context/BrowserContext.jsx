@@ -6,16 +6,17 @@ const initialValue = {
     time: "",
     meridiem: "",
     greetMsg: "",
-    focus: null
+    focus: null,
+    userLocation: null
 
 };
 const BrowserContext = createContext();
 
 const BrowserProvider = ({ children }) => {
-    const [{name, time, meridiem, greetMsg, focus}, BrowserDispatch] = useReducer(BrowserReducer, initialValue);
+    const [{name, time, meridiem, greetMsg, focus, userLocation}, BrowserDispatch] = useReducer(BrowserReducer, initialValue);
 
     return (
-        <BrowserContext.Provider value={{name, time, meridiem, greetMsg, focus, BrowserDispatch }}>
+        <BrowserContext.Provider value={{name, time, meridiem, greetMsg, focus, userLocation, BrowserDispatch }}>
             {children}
         </BrowserContext.Provider>
     );

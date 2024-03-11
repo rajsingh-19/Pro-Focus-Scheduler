@@ -1,0 +1,55 @@
+.todoContainer {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 6.5rem;
+    width: 18vw;
+    overflow-y: auto;
+    background-color: #9ca3af;
+    opacity: .9;
+    border-radius: 5px;
+    max-height: 45vh;
+}
+.todoInputs {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fafafa;
+    margin-bottom: 5px;
+    width: 15vw;
+    margin-left: 1vw;
+}
+.todoInputs:focus {
+    outline: none;
+}
+.text-center {
+    text-align: center;
+}
+.italic {
+    font-style: italic;
+}
+.todoItemsContainer {
+    width: 15vw;
+    padding: 5px, 0px;
+}
+.todoLabel {
+    min-width: 100%;
+    word-wrap: break-word; 
+}
+.todoCheckbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.todoDel {
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.strike {
+    text-decoration: line-through;
+}
+.pb5 {
+    padding-bottom: 5px;
+}

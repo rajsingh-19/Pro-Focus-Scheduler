@@ -17,9 +17,6 @@
     border: none;
     padding-top: 15px;
 }
-.strike {
-    text-decoration: line-through;
-}
 .time-div {
     margin-left: 20px;
     margin-top: 20px;
@@ -39,10 +36,57 @@
     width: 40%;
     line-height: 2.25rem;
     font-weight: 300;
+    text-align: center;
+}
+.inp-focus::placeholder {
+    font-size: 1.5rem;
+    color: #fafafa;
 }
 .checkbox {
     width: 1rem;
 }
 .del-icon {
     height: 1.5rem;
+}
+.weather-div {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 250px;
+}
+.weather-inp {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fafafa;
+    outline: none;
+    width: 100%;
+    text-align: center;
+}
+.float-r {
+    float: right;
+}
+/*     weather component     */
+.temp {
+    padding-left: 5px;
+}
+.line {
+    line-height: 1.5rem;
+}
+/*    todo   */
+.todoBtnDiv {
+    position: absolute;
+    float: right;
+    right: 1.5rem;
+    bottom: 3rem;
+}
+.todoBtn {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+.hide {
+    display: none;
 }
