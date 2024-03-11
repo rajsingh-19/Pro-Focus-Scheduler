@@ -18,7 +18,6 @@ function App() {
       payload: userName
     })
   }, []);
-  // console.log("name -", name);
 
   return (
     <div className='app background' style={{backgroundImage: `url(${bgImg})`}}>
