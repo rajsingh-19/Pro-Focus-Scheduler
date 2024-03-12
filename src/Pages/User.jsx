@@ -125,12 +125,12 @@ const User = () => {
         <div className='time-div text3 primary float-l'>{time} {meridiem}</div>
         
         {location ? <div className='weather-div'><Weather /></div> : 
-        <div className='weather-div flex dir-col'>
+        <div className='weather-div bg-transparent outline-none border-none float-r flex dir-col'>
           <p className='primary text3 float-r'>Today's Weather ?</p>
-          <input type="text" placeholder='City name..' className='primary text3 weather-inp float-r' onKeyDown={handleLocation} />
+          <input type="text" placeholder='City name..' className='primary bg-transparent outline-none border-none text-center text3 weather-inp float-r' onKeyDown={handleLocation} />
         </div>}
 
-        <div className='primary text greet-div'>{greetMsg} {name}</div>
+        <div className='primary text greet-div text-center'>{greetMsg} {name}</div>
 
         {focus ?  
         <div className='primary'>
@@ -141,20 +141,20 @@ const User = () => {
             <input type="checkbox" onChange={handleCheckbox} checked={isChecked}  className='text2 checkbox cursor'/>
             <span className='text2 p-l10 p-r10'>{focus}</span>
           </label>
-          <button className='del-btn justify-center text3' onClick={handleDelete}><MdDeleteForever className='items-center del-icon cursor'/></button>
+          <button className='del-btn bg-transparent outline-none border-none primary justify-center text3' onClick={handleDelete}><MdDeleteForever className='items-center del-icon cursor'/></button>
           </div>
         </div> :
         <div>
         <p className='primary flex justify-center text2 p-t-10'>What's your today's main focus ?</p>
           <form onSubmit={handleFormSubmit} className='flex justify-center p-t-10'>
-            <input required type="text" onKeyDown={handleTodayFocus} placeholder='focus...' className='inp-focus text2 primary' />
+            <input required type="text" onKeyDown={handleTodayFocus} placeholder='focus...' className='inp-focus bg-transparent outline-none border-none text-center text2 primary' />
           </form>
         </div> }
         { openTodo && <Todo />}
         <div className='todoBtnDiv float-r'>
-          <button className='cursor todoBtn float-r text3 primary' onClick={handleTodoBtn}>Task</button>
+          <button className='cursor bg-transparent outline-none border-none float-r text3 primary' onClick={handleTodoBtn}>Task</button>
         </div>
-        <div className='quotes primary text3'>{quote}</div>
+        <div className='quotes text-center primary text3'>{quote}</div>
     </div>
   )
 }

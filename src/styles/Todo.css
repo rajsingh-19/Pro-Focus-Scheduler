@@ -10,8 +10,6 @@
     max-height: 45vh;
 }
 .todoInputs {
-    background-color: transparent;
-    border: none;
     border-bottom: 1px solid #fafafa;
     margin-bottom: 5px;
     width: 15vw;
@@ -19,12 +17,6 @@
 }
 .todoInputs:focus {
     outline: none;
-}
-.text-center {
-    text-align: center;
-}
-.italic {
-    font-style: italic;
 }
 .todoItemsContainer {
     width: 15vw;
@@ -43,12 +35,6 @@
 .todoDel {
     width: 1.1rem;
     height: 1.1rem;
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-.strike {
-    text-decoration: line-through;
 }
 .pb5 {
     padding-bottom: 5px;

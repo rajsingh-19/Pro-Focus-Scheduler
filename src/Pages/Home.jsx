@@ -21,10 +21,10 @@ const Home = () => {
   
   return (
     <div className='home'>
-      <div className='brand-heading text primary p-l p-t'>Pro Focus Scheduler</div>
-      <div className='name-heading text primary flex justify-center items-center'>Hello!! What's your name ?</div>
+      <div className='brand-heading text primary p-l p-t italic'>Pro Focus Scheduler</div>
+      <div className='name-heading text primary flex justify-center items-center italic'>Hello!! What's your name ?</div>
       <form className='flex items-center justify-center' onSubmit={handleFormSubmit}>
-        <input required className='inp-home text2' type="text" placeholder='Enter your name....' onKeyDown={handleNameChange} />
+        <input required className='inp-home text2 text-center bg-transparent border-none outline-none' type="text" placeholder='Enter your name....' onKeyDown={handleNameChange} />
       </form>
     </div>
   )

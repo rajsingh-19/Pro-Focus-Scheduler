@@ -44,7 +44,7 @@ const Todo = () => {
     <div className="todoContainer">
         <p className="text-center italic text4 pb5">Tasks</p>
       <div>
-        <input type="text" className="todoInputs text4 primary text-center" value={todo} onChange={handleInputOnchange} onKeyDown={handleInput} />
+        <input type="text" className="todoInputs bg-transparent border-none text4 primary text-center" value={todo} onChange={handleInputOnchange} onKeyDown={handleInput} />
       </div>
       <div className="todoListContainer">
         {
@@ -55,7 +55,7 @@ const Todo = () => {
                   <input type="checkbox" className="todoCheckbox" onChange={() => handleTodoCheckbox(_id)} checked={isCompleted} />
                   {todo}
                 </label>
-                <button className="todoDel" onClick={() => handleTodoDelete(_id)}>
+                <button className="todoDel bg-transparent border-none outline-none" onClick={() => handleTodoDelete(_id)}>
                 <MdDeleteForever className='todoDel cursor'/>
                 </button>
               </div>

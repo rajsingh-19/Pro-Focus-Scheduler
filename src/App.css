@@ -56,6 +56,30 @@
 .strike {
     text-decoration: line-through;
 }
+.italic {
+    font-style: italic;
+}
+.text-center {
+    text-align: center;
+}
+.border-none {
+    border: none;
+}
+.outline-none {
+    outline: none;
+}
+.bg-transparent {
+    background-color: transparent;
+}
+.hide {
+    display: none;
+}
+.float-r {
+    float: right;
+}
+.float-l {
+    float: left;
+}
 /*      app        */
 .app {
     height: 100vh;
