@@ -124,7 +124,7 @@ const User = () => {
     <div className='user-page'>
         <div className='time-div text3 primary float-l'>{time} {meridiem}</div>
         
-        {location ? <div className='weather-div'><Weather /></div> : 
+        {location ? <div className='weather-div bg-transparent outline-none border-none float-r'><Weather /></div> : 
         <div className='weather-div bg-transparent outline-none border-none float-r flex dir-col'>
           <p className='primary text3 float-r'>Today's Weather ?</p>
           <input type="text" placeholder='City name..' className='primary bg-transparent outline-none border-none text-center text3 weather-inp float-r' onKeyDown={handleLocation} />
@@ -145,7 +145,7 @@ const User = () => {
           </div>
         </div> :
         <div>
-        <p className='primary flex justify-center text2 p-t-10'>What's your today's main focus ?</p>
+        <p className='primary flex justify-center text2 p-t-10 focus'>What's your today's main focus ?</p>
           <form onSubmit={handleFormSubmit} className='flex justify-center p-t-10'>
             <input required type="text" onKeyDown={handleTodayFocus} placeholder='focus...' className='inp-focus bg-transparent outline-none border-none text-center text2 primary' />
           </form>

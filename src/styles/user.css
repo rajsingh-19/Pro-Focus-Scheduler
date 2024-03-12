@@ -57,3 +57,85 @@
     right: 1.5rem;
     bottom: 3rem;
 }
+/*      media queries    */
+@media screen and (max-width: 575px) {
+    .quotes {
+        font-size: 1rem;
+    }
+    .todoBtnDiv > button {
+        font-size: 1.2rem;
+    }
+    .focus {
+        font-size: 1.4rem;
+    }
+    .inp-focus {
+        font-size: 1.25rem;
+        line-height: 1.3rem;
+    }
+    .greet-div {
+        font-size: 2rem;
+    }
+    .weather-inp, .weather-div > p {
+        font-size: 1rem;
+    }
+    .weather-div {
+        width: 20vw;
+    }
+    .weather-comp-div p, .weather-comp-div-l {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .quotes {
+        font-size: 1.2rem;
+    }
+    .todoBtnDiv > button {
+        font-size: 1.3rem;
+    }
+    .focus {
+        font-size: 1.4rem;
+    }
+    .inp-focus {
+        font-size: 1.25rem;
+        line-height: 1.3rem;
+    }
+    .greet-div {
+        font-size: 3rem;
+    }
+    .weather-inp, .weather-div > p {
+        font-size: 1.5rem;
+    }
+    .weather-div {
+        width: 20vw;
+    }
+    .weather-comp-div p, .weather-comp-div-l {
+        font-size: 1.35rem;
+    }
+}
+@media screen and (min-width: 768px) {
+    .quotes {
+        font-size: 1.5rem;
+    }
+    .todoBtnDiv > button {
+        font-size: 1.5rem;
+    }
+    .focus {
+        font-size: 2rem;
+    }
+    .inp-focus {
+        font-size: 2rem;
+        line-height: 1.5rem;
+    }
+    .greet-div {
+        font-size: 3rem;
+    }
+    .weather-inp, .weather-div > p {
+        font-size: 1.5rem;
+    }
+    .weather-div {
+        width: 250px;
+    }
+    .weather-comp-div p, .weather-comp-div-l {
+        font-size: 1.5rem;
+    }
+}

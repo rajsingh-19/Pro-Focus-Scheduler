@@ -55,15 +55,15 @@ const Weather = () => {
     <div className="flex dir-col float-r">
     {
       hide ? 
-      (<p className="primary text3">City not found</p>) :
+      (<p className="primary text3 float-r">City not found</p>) :
       (<>
-        <div className="flex dir-row float-r">
+      <div className="weather-comp-div flex dir-row float-r">
         <p className={`${hide ? "hide" : ""} text3 primary p-r10`}>{tempInCelsisus} °C</p>
         <span className={`${hide ? "hide" : ""} primary line`}>|</span>
         <p className="primary text3 temp">{weatherDesc}</p>
       </div>
       <div>
-      <span className="text3 primary float-r">{locationName}</span>
+      <span className="weather-comp-div-l text3 primary float-r">{locationName}</span>
       </div>
       </>)
     }
