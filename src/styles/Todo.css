@@ -39,3 +39,47 @@
 .pb5 {
     padding-bottom: 5px;
 }
+@media screen and (max-width: 575px) {
+    .todoContainer {
+        width: 80vw;
+    }
+    .todoInputs {
+        width: 78vw;
+    }
+    .todoItemsContainer {
+        width: 74vw;
+    }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .todoContainer {
+        width: 60vw;
+    }
+    .todoInputs {
+        width: 58vw;
+    }
+    .todoItemsContainer {
+        width: 54vw;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    .todoContainer {
+        width: 42vw;
+    }
+    .todoContainer > p {
+        font-size: 2rem;
+    }
+    .todoInputs {
+        width: 36vw;
+        font-size: 2.2rem;
+    }
+    .todoItemsContainer {
+        width: 36vw;
+    }
+    .todoLabel {
+        font-size: 2.2rem;
+    }
+    .todoDel {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+}
