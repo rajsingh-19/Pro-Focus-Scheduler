@@ -65,7 +65,6 @@ const Weather = () => {
       <div>
       <span className="weather-comp-div-l text3 primary float-r">{locationName}</span>
       </div>
-      <p>Hey, there is some changes</p>
       </>)
     }
     </div>
